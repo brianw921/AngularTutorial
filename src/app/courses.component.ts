@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-
+import { CoursesService } from './courses.service';
 //Declarator function. 
 @Component({ 
     selector: 'courses', //<courses>
@@ -22,4 +22,7 @@ export class CoursesComponent{
     //HTTP endpoint should be delegated to services. 
     courses;
 
+    constructor(service: CoursesService){
+        this.courses = service.getCourses();
+    }
 }
