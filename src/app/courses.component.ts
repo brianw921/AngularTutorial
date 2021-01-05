@@ -13,7 +13,7 @@ import { CoursesService } from './courses.service';
                         <td [attr.colspan]="colSpan"></td>
                     </tr>
                 </table>
-                <button class="btn btn-primary">Save</button>
+                
                 `
             //attr.colspan tells angular to target the colspan attribute of a html element
             //String interpolation vs property binding. String interpolation when rendering text
