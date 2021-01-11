@@ -18,7 +18,16 @@ import { CoursesService } from './courses.service';
                         <td [attr.colspan]="colSpan"></td>
                     </tr>
                 </table>
-                
+                <input  (keyup.enter)="onKeyUp($event)"/>
+                <input #email (keyup.enter)="onKeyUpp(email.value)"/>
+                <input [value]="email" (keyup.enter)="onKeyUpp($event)"/>
+                <input  (keyup.enter)="onKeyUpp($event)"/>
+
+                {{course.title | uppercase | lowercase}} <br/>
+                {{course.students | number}} <br/>
+                {{course.rating | number: '1.2-2'}} <br/>
+                {{course.price | currency:'AUD':true:'3.2-2'}} <br/>
+                {{course.releaseDate | date:'shortDate'}}
                 `
             //attr.colspan tells angular to target the colspan attribute of a html element
             //String interpolation vs property binding. String interpolation when rendering text
@@ -50,5 +59,26 @@ export class CoursesComponent{
         console.log("button was clicked",$event);
     }
 
+    //EventFiltering
+    onKeyUp($event){
+        if ($event.keyCode === 13) console.log("Enter was pressed", $event.target.value);
+        //Cleaner without passing in "$event" as a parameter
+        // console.log("ENTER was pressed");
+    }
+
+    //Template Variables
+    email = "me@example.com";
+    onKeyUpp(){
+        console.log(this.email);
+    }
+    
+    //Pipes
+    course = {
+        title: "Angular Tutorial",
+        rating: 4.9745,
+        students: 30123,
+        price: 190.95,
+        releaseDate: new Date(2020, 1, 11)
+    }
     
 }
