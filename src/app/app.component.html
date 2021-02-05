@@ -1,3 +1,8 @@
 <h1>Angular</h1>
 <courses></courses>
 <authors></authors>
+<favorite></favorite>
+
+<input type="text" [(ngModel)]="title">
+<br>
+{{title || titleCasePipe }}

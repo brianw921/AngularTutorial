@@ -7,7 +7,7 @@ import { CoursesService } from './courses.service';
                 `
                 <button class="btn btn-primary" [class.active]="isActive">Save</button>
                 <button [style.backgroundColor]="isActive ? 'blue' : 'white'">Save</button>
-                <div (click)="onDivClicked()" [style.backgroundColor]="pink">
+                <div (click)="onDivClicked()">
                     <button (click)="onSave($event)">Save</button>
                 </div>
                 <h2>{{ title }}</h2>
@@ -19,9 +19,9 @@ import { CoursesService } from './courses.service';
                     </tr>
                 </table>
                 <input  (keyup.enter)="onKeyUp($event)"/>
-                <input #email (keyup.enter)="onKeyUpp(email.value)"/>
-                <input [value]="email" (keyup.enter)="onKeyUpp($event)"/>
-                <input  (keyup.enter)="onKeyUpp($event)"/>
+                <input #email (keyup.enter)="onKeyUpp()"/>
+                <input [value]="email" (keyup.enter)="onKeyUpp()"/>
+                <input  (keyup.enter)="onKeyUpp()"/>
 
                 {{course.title | uppercase | lowercase}} <br/>
                 {{course.students | number}} <br/>
