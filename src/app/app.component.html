@@ -1,8 +1,19 @@
-<h1>Angular</h1>
+<!-- <h1>Angular</h1>
 <courses></courses>
 <authors></authors>
 <favorite></favorite>
 
 <input type="text" [(ngModel)]="title">
 <br>
-{{title || titleCasePipe }}
+{{title || titleCasePipe }} -->
+
+<!-- <img [src]="imageUrl"/>
+<button (click)="onClick()"></button> -->
+<favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged(($event))">hi</favorite>
+<bootstrap-panel>
+    <div class="heading">Heading</div>
+    <div class="body">
+        <h2>Body</h2>
+        <p>ssome content here...</p>
+    </div>
+</bootstrap-panel>
