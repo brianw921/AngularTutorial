@@ -11,9 +11,14 @@
 <button (click)="onClick()"></button> -->
 <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged(($event))">hi</favorite>
 <bootstrap-panel>
-    <div class="heading">Heading</div>
+    <ng-container class="heading">Heading</ng-container>
     <div class="body">
         <h2>Body</h2>
         <p>ssome content here...</p>
     </div>
+    
 </bootstrap-panel>
+<like 
+    [likesCount]="tweet.likesCount"
+    [isLiked]="tweet.isLiked"
+    ></like>
